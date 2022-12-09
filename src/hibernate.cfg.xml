@@ -1,0 +1,18 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<!--Hibernate配置文件的根元素，其它元素应在其中-->
+<hibernate-configuration>
+    <!-- 设置初始化Hibernate参数的元素，其中指定Hibernate初始化参数，表明以下的配置是针对session-factory配置，SessionFactory是Hibernate中的一个接口，这个接口主要负责保存Hibernate的配置信息，以及对Session的操作 -->
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/student?useSSL=false&amp;autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=UTF8&amp;zeroDateTimeBehavior=CONVERT_TO_NULL&amp;allowMultiQueries=true&amp;serverTimezone=Asia/Shanghai</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">admin</property>
+        <!-- 设置数据库的方言，每种数据库都有对应的方言 -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+
+        <!-- 加入映射文件，可以加入多个映射文件 -->
+        <mapping resource="PO/Teachinfo.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>
