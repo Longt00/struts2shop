@@ -1,6 +1,6 @@
 package action;
 
-import Dao.TeacherDao;
+import Dao.EmployeeDao;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.ServletActionContext;
 
@@ -12,7 +12,7 @@ public class LookEmployeeAction extends ActionSupport{
     private String message="input";
     public String execute() throws Exception{
         request=ServletActionContext.getRequest();
-        TeacherDao dao=new TeacherDao();
+        EmployeeDao dao=new EmployeeDao();
         List list=dao.findAllInfo();
         request.getSession().setAttribute("count", list.size());
         request.getSession().setAttribute("allInfo", list);

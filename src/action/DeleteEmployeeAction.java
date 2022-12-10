@@ -1,7 +1,7 @@
 
 package action;
 
-import Dao.TeacherDao;
+import Dao.EmployeeDao;
 import com.opensymphony.xwork2.ActionSupport;
 
 import javax.swing.*;
@@ -22,7 +22,7 @@ public class DeleteEmployeeAction extends ActionSupport{
         }
     }
     public String execute() throws Exception{
-        TeacherDao dao=new TeacherDao();
+        EmployeeDao dao=new EmployeeDao();
         boolean del=dao.deleteInfo(this.getId());
         if(del){
             message="success";

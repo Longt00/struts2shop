@@ -1,7 +1,7 @@
 package action;
 
-import Dao.TeacherDao;
-import PO.Teachinfo;
+import Dao.EmployeeDao;
+import PO.Employeeinfo;
 import com.opensymphony.xwork2.ActionSupport;
 
 import javax.swing.*;
@@ -51,7 +51,7 @@ public class AddEmployeeAction extends ActionSupport {
         if (this.getId() == null || this.getId().length() == 0) {
             addFieldError("id", "编号不允许为空!");
         } else {
-            TeacherDao dao = new TeacherDao();
+            EmployeeDao dao = new EmployeeDao();
             List list = dao.findInfo("id", this.getId());
             if (!list.isEmpty()) {
                 addFieldError("id", "编号已存在!");
@@ -67,7 +67,7 @@ public class AddEmployeeAction extends ActionSupport {
     }
 
     public String execute() throws Exception {
-        TeacherDao dao = new TeacherDao();
+        EmployeeDao dao = new EmployeeDao();
         boolean save = dao.saveInfo(info());
         if (save) {
             message = "success";
@@ -75,8 +75,8 @@ public class AddEmployeeAction extends ActionSupport {
         return message;
     }
 
-    public Teachinfo info() {
-        Teachinfo info = new Teachinfo();
+    public Employeeinfo info() {
+        Employeeinfo info = new Employeeinfo();
         info.setId(this.getId());
         info.setName(this.getName());
         info.setSex(this.getSex());

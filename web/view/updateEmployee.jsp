@@ -1,4 +1,4 @@
-<%@page import="PO.Teachinfo" %>
+<%@page import="PO.Employeeinfo" %>
 <%@page import="java.util.ArrayList" %>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <%@taglib prefix="s" uri="/struts-tags" %>
@@ -38,7 +38,7 @@
     <table align="center" width="30%" border="5">
         <%
             ArrayList list = (ArrayList) session.getAttribute("oneInfo");
-            Teachinfo info = (Teachinfo) list.get(0);
+            Employeeinfo info = (Employeeinfo) list.get(0);
         %>
         <tr>
             <td>

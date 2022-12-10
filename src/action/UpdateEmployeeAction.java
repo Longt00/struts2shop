@@ -1,8 +1,8 @@
 
 package action;
 
-import Dao.TeacherDao;
-import PO.Teachinfo;
+import Dao.EmployeeDao;
+import PO.Employeeinfo;
 import com.opensymphony.xwork2.ActionSupport;
 
 import javax.swing.*;
@@ -50,15 +50,15 @@ public class UpdateEmployeeAction extends ActionSupport{
         }
     }
     public String execute() throws Exception{
-        TeacherDao dao=new TeacherDao();
+        EmployeeDao dao=new EmployeeDao();
         boolean update=dao.updateInfo(info());
         if(update){
             message="success";
         }
         return message;
     }
-    public Teachinfo info(){
-        Teachinfo info=new Teachinfo();
+    public Employeeinfo info(){
+        Employeeinfo info=new Employeeinfo();
         info.setId(this.getId());
         info.setName(this.getName());
         info.setSex(this.getSex());

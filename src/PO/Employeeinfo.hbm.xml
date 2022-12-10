@@ -3,7 +3,7 @@
     "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
     "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="PO.Teachinfo" table="teachinfo" catalog="student">
+    <class name="PO.Employeeinfo" table="teachinfo" catalog="student">
         <id name="id" type="string">
             <column name="id" length="20" />
             <generator class="assigned" />

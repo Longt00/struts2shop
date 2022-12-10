@@ -1,7 +1,7 @@
 
 package Dao;
 
-import PO.Teachinfo;
+import PO.Employeeinfo;
 import addHibernateFile.HibernateSessionFactory;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -10,13 +10,13 @@ import org.hibernate.Transaction;
 import javax.swing.*;
 import java.util.List;
 
-public class TeacherDao {
+public class EmployeeDao {
     private Transaction transaction;
     private Session session;
     private Query query;
-    public TeacherDao(){
+    public EmployeeDao(){
     }
-    public boolean  saveInfo(Teachinfo info){
+    public boolean  saveInfo(Employeeinfo info){
         try{
             session=HibernateSessionFactory.getSession();
             transaction=session.beginTransaction();
@@ -34,7 +34,7 @@ public class TeacherDao {
         session=HibernateSessionFactory.getSession();
         try{
             transaction=session.beginTransaction();
-            String queryString="from Teachinfo as model where model."+type+"=?";
+            String queryString="from Employeeinfo as model where model."+type+"=?";
             query=session.createQuery(queryString);
             query.setParameter(0, value);
             List list=query.list();
@@ -47,11 +47,12 @@ public class TeacherDao {
             return null;
         }
     }
+
     public List findAllInfo(){
         session=HibernateSessionFactory.getSession();
         try{
             transaction=session.beginTransaction();
-            String queryString="from Teachinfo ";
+            String queryString="from Employeeinfo ";
             query=session.createQuery(queryString);
             List list=query.list();
             transaction.commit();
@@ -67,8 +68,8 @@ public class TeacherDao {
         try{
             session=HibernateSessionFactory.getSession();
             transaction=session.beginTransaction();
-            Teachinfo info=new Teachinfo();
-            info=(Teachinfo)session.get(Teachinfo.class, id);
+            Employeeinfo info=new Employeeinfo();
+            info=(Employeeinfo)session.get(Employeeinfo.class, id);
             session.delete(info);
             transaction.commit();
             session.close();
@@ -79,7 +80,7 @@ public class TeacherDao {
             return false;
         }
     }
-    public boolean updateInfo(Teachinfo info){
+    public boolean updateInfo(Employeeinfo info){
         try{
             session=HibernateSessionFactory.getSession();
             transaction=session.beginTransaction();

@@ -1,4 +1,4 @@
-<%@page import="PO.Teachinfo" %>
+<%@page import="PO.Employeeinfo" %>
 <%@page import="java.util.ArrayList" %>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <%@taglib prefix="s" uri="/struts-tags" %>
@@ -23,7 +23,7 @@
                 </strong>
             </div>
         </div>
-        <a href="./login.jsp" class="text-light align-justify">返回</a>
+        <a href="./Employee.jsp" class="text-light align-justify">返回</a>
         <div class="offset-md-1"></div>
     </nav>
 

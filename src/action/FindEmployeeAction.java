@@ -1,6 +1,6 @@
 package action;
 
-import Dao.TeacherDao;
+import Dao.EmployeeDao;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.ServletActionContext;
 
@@ -26,7 +26,7 @@ public class FindEmployeeAction extends ActionSupport{
     }
     public String execute() throws Exception{
         request=ServletActionContext.getRequest();
-        TeacherDao dao=new TeacherDao();
+        EmployeeDao dao=new EmployeeDao();
         List list=dao.findInfo("id", this.getId());
         request.getSession().setAttribute("oneInfo", list);
         message="success";

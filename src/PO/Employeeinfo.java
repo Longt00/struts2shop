@@ -1,6 +1,6 @@
 package PO;
 
-public class Teachinfo implements java.io.Serializable {
+public class Employeeinfo implements java.io.Serializable {
     private String id;
     private String name;
     private String sex;
