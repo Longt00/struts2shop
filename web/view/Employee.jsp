@@ -22,10 +22,12 @@
     <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/bootstrap-table@1.21.1/dist/bootstrap-table.min.js"></script>
     <%--    bootstrap布局 --%>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <%--    chart.js --%>
 </head>
 <body>
 <div>
-    <nav class="navbar navbar-expand-lg bg-primary navbar-dark p-3">
+    <nav class="navbar navbar-expand-lg bg-primary navbar-dark p-3 navbar-fixed-top">
         <div class="container">
             <div class="navbar-brand text-light">
                 <strong>
@@ -33,14 +35,14 @@
                 </strong>
             </div>
         </div>
-        <a href="./login.jsp" class="text-light align-justify">返回</a>
+        <a href="../view/login.jsp" class="text-light align-justify">返回</a>
         <div class="offset-md-1"></div>
     </nav>
 
 </div>
 
 <main>
-    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark text-center" style="width: 280px;">
+    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark text-center" style="width:300px;">
         <span class="fs-4">请选择需要的功能</span>
         <hr>
         <ul class="nav nav-pills flex-column mb-auto">
@@ -72,6 +74,9 @@
         <div class="text-center">
             <div class="h1" id="time"></div>
         </div>
+        <div style="position: relative;height: 460px;width: 1111px">
+            <canvas id="myChart" style="height: 450px;width: 1110px"></canvas>
+        </div>
         <div id="main">
             <div class="container">
                 <div class="container-fluid ">
@@ -85,21 +90,19 @@
             <div class="container">
                 <div class="container-fluid ">
                     <div class="row">
-
                         <div class=" col-md-6"></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
 </main>
 
 
 <script src="../script/calendar.js"></script>
 </body>
 <script>
+    // calendar
     $(document).ready(function () {
         $('#my-calendar').calendar({
             cell_border: false,    //显示单元格边框
@@ -110,6 +113,7 @@
         });
     })
 
+    //当前时间
     /*---------- 动态获取系统当前日期方法start ------*/
     document.getElementById('time').innerHTML = new Date().toLocaleString()
         + ' 星期' + '日一二三四五六'.charAt(new Date().getDay());
@@ -118,6 +122,39 @@
         1000);
 
     /*---------- 动态获取系统当前日期方法end ------*/
+
+    //chart.js
+    const ctx = document.getElementById('myChart');
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['螺丝', '螺帽', '工具箱', '扳手', '管子', '电线'],
+            datasets: [{
+                label: '商品数量',
+                data: [12, 15, 4, 3, 6, 9],
+                borderColor: "red",
+                backgroundColor: "rgb(66,102,244)",
+                order: 1
+            }, {
+                label: '警告数量',
+                data: [3, 3, 3, 3, 3, 3],
+                borderColor: "red",
+                backgroundColor: "orange",
+                type: 'line',
+                order: 0
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            },
+            response: false
+        },
+    });
+
 </script>
 
 </html>

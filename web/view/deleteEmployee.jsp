@@ -15,7 +15,7 @@
 <body class="bg-light">
 <%response.setCharacterEncoding("UTF-8");%>
 <div>
-    <nav class="navbar navbar-expand-lg bg-primary navbar-dark p-3">
+    <nav class="navbar navbar-expand-lg bg-primary navbar-dark p-3 navbar-fixed-top">
         <div class="container">
             <div class="navbar-brand text-light">
                 <strong>
