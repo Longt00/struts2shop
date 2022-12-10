@@ -28,6 +28,7 @@
         <div class="offset-md-1"></div>
     </nav>
 </div>
+
 <ul class="nav nav-tabs p-2 nav-fill " size="24px">
     <li class="nav-item ">
         <a class="nav-link disabled" aria-current="page" href="#">
@@ -46,12 +47,6 @@
     </li>
 </ul>
 
-<br><br>
-<div class="container text-center">
-    <span class="text-center">你要查询的数据表中共有<%=request.getSession().getAttribute("count")%>人</span>
-</div>
-<br>
-<br>
 <div class="container">
     <table class="text-center table table-bordered " id="tb">
         <thead>
@@ -104,9 +99,12 @@
 <script  type="text/javascript">
     $('#tb').bootstrapTable({
         pagination: true,   //是否显示分页条
-        pageSize:5,   //一页显示的行数
+        pageSize:10,   //一页显示的行数
         paginationLoop: false,   //是否开启分页条无限循环，最后一页时点击下一页是否转到第一页
-        pageList: [5, 10, 20]   //选择每页显示多少行，数据过少时可能会没有效果
+        pageList: [10, 20],  //选择每页显示多少行，数据过少时可能会没有效果
+        search: true,
+        searchOnEnterKey: false,
+        searchAlign:"right"
     });
 </script>
 </html>

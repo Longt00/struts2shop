@@ -25,7 +25,6 @@ public class LoginAction extends ActionSupport implements ModelDriven<User> {
             ActionContext.getContext().put("msg", "用户名或密码错误");
             str = "input";
         }
-        System.out.println(str);
         return str;
     }
     //注销用户

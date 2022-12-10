@@ -1,4 +1,5 @@
-<%--
+<%@ page import="java.util.Date" %>
+<%@ page import="java.text.SimpleDateFormat" %><%--
   Created by IntelliJ IDEA.
   User: 26807
   Date: 2022/12/9
@@ -35,7 +36,7 @@
         <a href="./login.jsp" class="text-light align-justify">返回</a>
         <div class="offset-md-1"></div>
     </nav>
-    
+
 </div>
 
 <main>
@@ -66,12 +67,16 @@
     </div>
     <div class="b-example-divider"></div>
     <div class="container">
+        <div class="text-center"><h1>欢迎你，${user.username}</h1></div>
+        <br>
+        <div class="text-center">
+            <div class="h1" id="time"></div>
+        </div>
         <div id="main">
             <div class="container">
                 <div class="container-fluid ">
                     <div class="row">
-                        <%--                    <div class="col-md-6"></div>--%>
-                        <div class="offset-md-4 col-md-8" id="my-calendar"></div>
+                        <div class="col-md-12" id="my-calendar"></div>
                     </div>
                 </div>
             </div>
@@ -93,7 +98,6 @@
 
 
 <script src="../script/calendar.js"></script>
-<%--<script src="../script/sidebar.js"></script>--%>
 </body>
 <script>
     $(document).ready(function () {
@@ -105,5 +109,15 @@
             today: true,      //对今天的日期特别标注
         });
     })
+
+    /*---------- 动态获取系统当前日期方法start ------*/
+    document.getElementById('time').innerHTML = new Date().toLocaleString()
+        + ' 星期' + '日一二三四五六'.charAt(new Date().getDay());
+    setInterval(
+        "document.getElementById('time').innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());",
+        1000);
+
+    /*---------- 动态获取系统当前日期方法end ------*/
 </script>
+
 </html>
