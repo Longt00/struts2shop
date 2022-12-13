@@ -35,7 +35,7 @@
                 </strong>
             </div>
         </div>
-        <a href="../view/login.jsp" class="text-light align-justify">返回</a>
+        <a href="./login.jsp" class="text-light align-justify">返回</a>
         <div class="offset-md-1"></div>
     </nav>
 

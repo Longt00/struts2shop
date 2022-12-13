@@ -34,7 +34,7 @@
     <div class="row">
         <div class="offset-md-3 col-md-6">
             <div class="p-3"></div>
-            <form class="form-horizontal" action="login_login.action" method="post">
+            <form class="form-horizontal" action="login.action" method="post">
                 <span class="heading">用户登录</span>
 
                 <div class="form-group">
@@ -48,7 +48,7 @@
                 <div class="form-group">
                     <h3 class="p-1">${msg}</h3>
                     <div class="p-2"></div>
-                    <input value="登录" type="submit" class=" btn bg-primary"/>
+                    <button type="submit" class=" btn bg-primary">登录</button>
                 </div>
             </form>
         </div>
