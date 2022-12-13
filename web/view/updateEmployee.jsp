@@ -14,6 +14,15 @@
 </head>
 <body class="bg-light">
 <%response.setCharacterEncoding("UTF-8");%>
+<nav class="navbar navbar-expand-lg bg-primary navbar-dark p-3 navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-brand text-light">
+            <strong>
+                <span>MEITISHANGCHENG Staffing System</span>
+            </strong>
+        </div>
+    </div>
+</nav>
 <ul class="nav nav-tabs p-2 nav-fill " size="24px">
     <li class="nav-item ">
         <s:a class="nav-link" href="../view/lookEmployee.jsp">查看员工信息</s:a>
@@ -78,6 +87,14 @@
             </td>
             <td>
                 <input name="department" value="<%=info.getDepartment()%>"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                薪酬
+            </td>
+            <td>
+                <input name="salary" value="<%=info.getSalary()%>"/>
             </td>
         </tr>
         <tr>

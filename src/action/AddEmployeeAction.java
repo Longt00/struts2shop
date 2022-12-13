@@ -13,6 +13,8 @@ public class AddEmployeeAction extends ActionSupport {
     private String sex;
     private int age;
     private String department;
+
+    private int salary;
     private String message = "input";
 
     public String getId() {
@@ -82,6 +84,7 @@ public class AddEmployeeAction extends ActionSupport {
         info.setSex(this.getSex());
         info.setAge(this.getAge());
         info.setDepartment(this.getDepartment());
+        info.setSalary(this.getSalary());
         return info;
     }
 
@@ -97,5 +100,13 @@ public class AddEmployeeAction extends ActionSupport {
 
     public void setDepartment(String department) {
         this.department = department;
+    }
+
+    public int getSalary() {
+        return salary;
+    }
+
+    public void setSalary(int salary) {
+        this.salary = salary;
     }
 }

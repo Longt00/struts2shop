@@ -20,5 +20,8 @@
         <property name="department" type="string">
             <column name="department" precision="10" scale="0" not-null="true" />
         </property>
+        <property name="salary" type="int">
+            <column name="salary" precision="10" scale="0" not-null="true" />
+        </property>
     </class>
 </hibernate-mapping>

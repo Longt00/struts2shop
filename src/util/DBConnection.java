@@ -8,7 +8,7 @@ public class DBConnection {
     static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
     static final String DB_URL = "jdbc:mysql://localhost:3306/test1?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8";
 
-    // 数据库的用户名与密码，需要根据自己的设置
+    // 数据库的用户名与密码
     static final String USER = "root";
     static final String PASS = "admin";
 

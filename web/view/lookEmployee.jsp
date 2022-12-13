@@ -57,6 +57,7 @@
             <th class="border-dark" >性别</th>
             <th class="border-dark" >年龄</th>
             <th class="border-dark" >所在部门</th>
+            <th class="border-dark" >薪酬</th>
         </tr>
         </thead>
         <%
@@ -85,6 +86,8 @@
             <td class="border-dark" ><%=info.getAge()%>
             </td>
             <td class="border-dark" ><%=info.getDepartment()%>
+            </td>
+            <td class="border-dark" ><%=info.getSalary()%>
             </td>
         </tr>
         <%

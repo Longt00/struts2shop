@@ -63,6 +63,9 @@
                 <s:textfield name="age" label="年龄"/>
 
                 <s:textfield name="department" label="所在部门"/>
+
+                <s:textfield name="salary" label="薪酬"/>
+
                 <s:submit class="btn btn-primary border-dark offset-md-5" value="确定"/>
                 <s:reset class="btn btn-primary border-dark offset-md-5" value="清除"/>
             </td>
