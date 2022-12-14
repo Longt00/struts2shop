@@ -8,6 +8,24 @@
 <struts>
     <!-- Configuration for the default package. -->
     <package name="default" extends="struts-default">
+        <default-action-ref name="index"/>
+        <action name="index">
+            <result>/view/login.jsp</result>
+        </action>
+
+        <action name="addEmployeePageAction" class="action.Redirect" method="addPage">
+            <result name="addPage">/view/addEmployee.jsp</result>
+        </action>
+        <action name="deleteEmployeePageAction" class="action.Redirect" method="deletePage">
+            <result name="deletePage">/view/deleteEmployee.jsp</result>
+        </action>
+<!--        <action name="lookEmployeePageAction" class="action.Redirect" method="lookPage">-->
+<!--            <result name="lookPage">/view/addEmployee.jsp</result>-->
+<!--        </action>-->
+        <action name="findEmployeePageAction" class="action.Redirect" method="findPage">
+            <result name="findPage">/view/findEmployee.jsp</result>
+        </action>
+
 
         <action name="lookEmployeeAction" class="action.LookEmployeeAction">
             <result name="success">/view/lookEmployee.jsp</result>
@@ -29,11 +47,33 @@
             <result name="success" type="chain">lookEmployeeAction</result>
             <result name="input">/view/deleteEmployee.jsp</result>
         </action>
-
-        <action name="login" class="action.UserAction" method="login">
-            <result name="loginout">view/login.jsp</result>
-            <result name="loginin">view/Employee.jsp</result>
+        <!-- 实现登录操作 -->
+        <action name="login_*" class="action.LoginAction"
+                method="login">
+            <result>/view/Employee.jsp</result>
+            <result name="input">view/login.jsp</result>
+            <result name="clearSession">view/login.jsp</result><!-- 注销用户的操作 -->
         </action>
-
+        <!--   返回操作   -->
+        <action name="back" class="action.LoginAction" method="back">
+            <result name="error">view/Employee.jsp</result>
+        </action>
+    </package>
+    <package name="default2" extends="struts-default">
+        <!-- 自定义拦截器 -->
+        <interceptors>
+            <interceptor name="login" class="interceptor.LoginInterceptor">
+            </interceptor>
+            <interceptor-stack name="myStack">
+                <interceptor-ref name="login"/>
+                <interceptor-ref name="defaultStack"/>
+            </interceptor-stack>
+        </interceptors>
+        <!-- 使用拦截器 -->
+        <default-interceptor-ref name="myStack"/>
+        <action name="index" class="action.LoginAction" method="clearSession">
+            <result name="input">view/login.jsp</result>
+            <result>view/Employee.jsp</result>
+        </action>
     </package>
 </struts>

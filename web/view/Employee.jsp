@@ -35,7 +35,7 @@
                 </strong>
             </div>
         </div>
-        <a href="./login.jsp" class="text-light align-justify">返回</a>
+        <a href="back.action" class="text-light align-justify">返回</a>
         <div class="offset-md-1"></div>
     </nav>
 
@@ -51,17 +51,17 @@
             </li>
             <br>
             <li style="width:240px">
-                <s:a class="nav-link text-light btn-primary" href="../view/findEmployee.jsp"
+                <s:a class="nav-link text-light btn-primary" href="findEmployeePageAction"
                      style="width:240px">修改员工信息</s:a>
             </li>
             <br>
             <li style="width:240px">
-                <s:a class="nav-link text-light btn-primary" href="../view/deleteEmployee.jsp"
+                <s:a class="nav-link text-light btn-primary" href="deleteEmployeePageAction"
                      style="width:240px">删除员工信息</s:a>
             </li>
             <br>
             <li style="width:240px">
-                <s:a class="nav-link text-light btn-primary" href="../view/addEmployee.jsp"
+                <s:a class="nav-link text-light btn-primary" href="addEmployeePageAction"
                      style="width:240px">添加员工信息</s:a>
             </li>
         </ul>

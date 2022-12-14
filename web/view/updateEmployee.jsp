@@ -25,10 +25,10 @@
 </nav>
 <ul class="nav nav-tabs p-2 nav-fill " size="24px">
     <li class="nav-item ">
-        <s:a class="nav-link" href="../view/lookEmployee.jsp">查看员工信息</s:a>
+        <s:a class="nav-link" href="lookEmployeeAction">查看员工信息</s:a>
     </li>
     <li class="nav-item">
-        <s:a class="nav-link" href="../view/addEmployee.jsp">添加员工信息</s:a>
+        <s:a class="nav-link" href="addEmployeePageAction">添加员工信息</s:a>
 
     </li>
     <li class="nav-item">
@@ -37,7 +37,7 @@
         </a>
     </li>
     <li class="nav-item">
-        <s:a class="nav-link" href="../view/deleteEmployee.jsp">删除员工信息</s:a>
+        <s:a class="nav-link" href="deleteEmployeePageAction">删除员工信息</s:a>
     </li>
 </ul>
 <br/><br/><br/>
@@ -100,7 +100,7 @@
         <tr>
             <td colspan="2" class="text-center offset-md-3">
                 <button type="submit" class="btn btn-primary" >提交</button>
-                <a class="btn" href="../view/findEmployee.jsp">返回</a>
+                <a class="btn" href="findEmployeePageAction.action">返回</a>
             </td>
         </tr>
     </table>

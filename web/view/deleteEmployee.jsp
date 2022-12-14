@@ -23,7 +23,7 @@
                 </strong>
             </div>
         </div>
-        <a href="./Employee.jsp" class="text-light align-justify">返回</a>
+        <a href="back.action" class="text-light align-justify">返回</a>
         <div class="offset-md-1"></div>
     </nav>
 
@@ -33,11 +33,11 @@
         <s:a class="nav-link" href="lookEmployeeAction">查看员工信息</s:a>
     </li>
     <li class="nav-item">
-        <s:a class="nav-link" href="../view/addEmployee.jsp">添加员工信息</s:a>
+        <s:a class="nav-link" href="addEmployeePageAction">添加员工信息</s:a>
 
     </li>
     <li class="nav-item">
-        <s:a class="nav-link" href="../view/findEmployee.jsp">修改员工信息</s:a>
+        <s:a class="nav-link" href="findEmployeePageAction">修改员工信息</s:a>
     </li>
     <li class="nav-item">
         <a class="nav-link disabled" aria-current="page" href="#">
